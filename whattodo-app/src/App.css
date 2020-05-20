@@ -6,13 +6,15 @@
 }
 h2 {
   text-align: center;
-  padding-top: 1em;
+  color: whitesmoke;
 }
+
 .fas {
-  color: black;
+  color: whitesmoke;
   margin-top: 1em;
   margin-left: 1em;
   margin-bottom: .5em;
+
 }
 
 .sidebar {
@@ -25,6 +27,8 @@ h2 {
   margin-top: .5em;
   margin-left: 1em;
   padding-bottom: 1em;
+  color: whitesmoke;
+  line-height: 1.5em;
 }
 
 h3 {
@@ -73,4 +77,19 @@ h4 {
   border-style: solid;
   margin: 1em;
   width: 58.4%;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  position: relative;
+  margin-left: 1.5em;
+  margin-top: 1em;
+}
+.user__name {
+  margin-left: 1.5em;
+  margin-top: .2em;
+  color: whitesmoke;
+  font-size: 10px;
 }

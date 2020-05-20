@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
 
-// const user = {
-//   name: "Amanda Key",
-//   picture: <img src="./myImage.jpg" alt="my avatar"/>, 
-// };
+const user = {
+  name: "Amanda Key",
+  avatar: "./AmandaEzra.jpg"
+}
 
 const tasks = [
   {
@@ -33,7 +33,10 @@ function App() {
     <>
 
       <header class="sidebar">
-
+        <div class="user">
+          <img class="avatar" src={user.avatar} alt="user avatar"/>
+          <h5 class="user__name">{user.name}</h5>
+        </div>
         <div class="logo">
           <h2>WhatToDo</h2>
         </div>
