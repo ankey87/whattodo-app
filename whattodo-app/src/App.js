@@ -4,6 +4,7 @@ import Todo from "./components/Todo.js";
 import Header from "./components/Header.js";
 import SideMenu from "./components/SideMenu.js"
 
+const TASKS_KEY = "myapp_tasks"
 class App extends Component {
   state = {
     tasks: [
@@ -23,17 +24,48 @@ class App extends Component {
         completed: false
       },
     ],
+    newEvent: "",
+
     user: {
       name: "Amanda Key",
       avatar: "./AmandaEzra.jpg"
     },
   };
 
+  componentDidMount() {
+    const tasksString = localStorage.getItem(TASKS_KEY)
+    if (tasksString) {
+      this.setState({tasks: JSON.parse(tasksString)})
+    }
+  }
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.tasks !== this.state.tasks){
+    localStorage.setItem(TASKS_KEY, JSON.stringify(this.state.tasks))
+  }
+}
+
+  handleOnAddNewEvent = (event) => {
+    this.setState({newEvent: event.target.value})
+  }
+  handleAddNewEvent = () => {
+    let newEventObj = {
+      title: this.state.newEvent,
+      completed: false,
+    }
+    this.setState({
+      tasks: [...this.state.tasks, newEventObj],
+      newEvent: ""
+    })
+  }
+// handleClick = (id) => {
+
+// }
+
   render() {
     return (
       <> 
       <Header avatar={this.state.user.avatar} name={this.state.user.name}/>
-          <SideMenu />        
+          <SideMenu handleAddNewEvent={this.handleAddNewEvent}newEvent={this.state.newEvent} onChange={this.handleOnAddNewEvent}/>        
           {this.state.tasks.map((task, index) => (
             <Todo task={task} key={index} />
           ))}

@@ -61,10 +61,10 @@ a {
 
 button {
   width: 6.5em;
-  font-size: 18px;
+  font-size: 12px;
   border-radius: 1em;
   background-color: teal;
-  margin-left: 1em;
+  margin-left: .2em;
   margin-top: .5em;
   margin-bottom: .2em;;
   color: white;
@@ -88,7 +88,7 @@ button {
   display: flex;
   flex-direction: column;
   line-height: 5em;
-  left: 230px;
+  left: 250px;
   bottom: 470px;
   border: solid;
   border-color: black;
@@ -123,3 +123,17 @@ button {
   margin-bottom: .5em;
 }
 
+input {
+  margin-left: .5em;
+}
+.clock h2 {
+  text-align: center;
+  line-height: 50px;
+}
+
+.clock img {
+  display: flex;
+  position: relative;
+  left: 475px;
+  margin-top: 1em;
+}

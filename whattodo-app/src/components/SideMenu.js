@@ -15,7 +15,10 @@ function SideMenu(props) {
                     <li>Home</li>
                 </ul>
                 <div className="new__task__btn">
-                    <button>+ New Task</button>
+                    <input type="text"
+                    value={props.newEvent}
+                    onChange={props.onChange}></input>
+                    <button onClick={props.handleAddNewEvent}>Add Task</button>
                 </div>
                 <h4><a href="#">Filter</a></h4>
             </div>
