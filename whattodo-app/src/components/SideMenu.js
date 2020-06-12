@@ -18,7 +18,7 @@ function SideMenu(props) {
                     <input type="text"
                     value={props.newEvent}
                     onChange={props.onChange}></input>
-                    <button onClick={props.handleAddNewEvent}>Add Task</button>
+                    <button className="add__tsk" onClick={props.handleAddNewEvent}>Add Task</button>
                 </div>
                 <h4><a href="#">Filter</a></h4>
             </div>

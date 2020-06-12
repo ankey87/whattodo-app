@@ -54,12 +54,13 @@
   position: relative;
   bottom: 30px;
 }
+
 a {
   text-decoration: none;
   color: teal;
 }
 
-button {
+.add__tsk {
   width: 6.5em;
   font-size: 12px;
   border-radius: 1em;
@@ -136,4 +137,13 @@ input {
   position: relative;
   left: 475px;
   margin-top: 1em;
+}
+.delete__btn {
+  font-size: 10px;
+  color: red;
+  border-color: white;
+  background-color: white;
+  border-style: none;
+  margin: 0;
+  padding: 0;
 }
