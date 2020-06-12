@@ -76,6 +76,32 @@ class TodoList extends Component {
     })
   }
 
+  onChangeCheckbox = (id) => {
+    this.setState((state) => {
+      let todosCopy = state.tasks.map((task) => {
+        if (task.id === id)
+          return { ...task, completed: task.completed ? false : true }
+        else {
+          return task;
+        }
+      });
+      return ({
+        tasks: todosCopy
+      });
+    })
+  }
+  
+  handleRemoveTask = (id) => {
+    this.setState((state) => {
+      let newTask = state.tasks.filter((task) => {
+        return task.id !== id
+      });
+      return ({
+        tasks: newTask
+      });
+    })
+  }
+
   render() {
     return (
       <>
