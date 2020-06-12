@@ -1,7 +1,6 @@
 import React from 'react';
 
 function Todo(props) {
-    // const handleCheck = () => props.onChangeCheckbox(props.task.id)
     return (
         <section className="task__list">
             <ul className="list__main">
@@ -12,6 +11,3 @@ function Todo(props) {
     )
 }
 export default Todo;
-
-
-// defaultChecked={props.task.completed} onChange={handleCheck}
