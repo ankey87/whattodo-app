@@ -4,45 +4,6 @@
   list-style: none;
   font-family: Arial, Helvetica, sans-serif;
 }
-.avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 20px;
-  position: relative;
-  margin-left: 1.5em;
-  margin-top: 1em;
-}
-
-.user__name {
-  margin-left: 1.5em;
-  margin-top: .2em;
-  color: whitesmoke;
-  font-size: 10px;
-}
-
-.nav__links {
-  margin-top: .5em;
-  margin-left: 1em;
-  padding-bottom: 1em;
-  color: whitesmoke;
-  line-height: 1.5em;
-}
-
-.header {
-  background-color: teal;
-  display: flex;
-  flex-direction: column;
-  height: 200px;
-}
-
-.logo {
-  display: flex;
-  position: relative;
-  justify-self: center;
-  align-items: center;
-  color: whitesmoke;
-  left: 600px;
-}
 
 .fas {
   color: whitesmoke;
@@ -50,24 +11,9 @@
   margin-left: 1em;
 }
 
-.ham__menu__ctn {
-  position: relative;
-  bottom: 30px;
-}
 a {
   text-decoration: none;
   color: teal;
-}
-
-button {
-  width: 6.5em;
-  font-size: 12px;
-  border-radius: 1em;
-  background-color: teal;
-  margin-left: .2em;
-  margin-top: .5em;
-  margin-bottom: .2em;;
-  color: white;
 }
 
 .menu__ctn h4 {
@@ -83,33 +29,6 @@ button {
   margin-left: .2em;
 }
 
-.task__list {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  line-height: 5em;
-  left: 250px;
-  bottom: 470px;
-  border: solid;
-  border-color: black;
-  border-radius: 4px ;
-  margin-bottom: 1em;
-  padding-left: 1em;
-  padding-bottom: .5em;
-  width: 30%;
-}
-
-.sub__cats {
-  border-style: solid;
-  border-color: lightgray;
-  border-width: 1px;
-  line-height: 2em;
-  padding-left: 1em;
-  width: 15%;
-  border-radius: 5px;
-  margin-left: .2em;
-}
- 
  .head__name {
   position: relative;
   right: 595px;
@@ -125,6 +44,7 @@ button {
 
 input {
   margin-left: .5em;
+  margin-top: .5em;
 }
 .clock h2 {
   text-align: center;
