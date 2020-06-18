@@ -1,11 +1,13 @@
+// import styled from 'styled-components';
 import React, { Component } from 'react';
 import './App.css';
 import Header from "./components/Header.js";
 import SideMenu from "./components/SideMenu.js";
 import TodoList from "./components/TodoList.js";
-import { Route, Switch, withRouter,} from 'react-router-dom';
+import { Route, Switch, withRouter, } from 'react-router-dom';
 import Dashboard from "./components/Dashboard";
 // import Login from "./components/Login";
+// import Register from "./components/Register";
 
 class App extends Component {
   state = {
@@ -20,19 +22,20 @@ class App extends Component {
   render() {
     return (
       <>
-        
         <Header avatar={this.state.user.avatar} name={this.state.user.name} />
-      
         <SideMenu handleAddNewEvent={this.handleAddNewEvent} newEvent={this.state.newEvent} onChange={this.handleOnAddNewEvent} />
-
         <Switch>
-          <Route exact path="/">
-            <Dashboard />
+          {/* <Route exact path="/register">
+            <Register />
           </Route>
-          {/* <Route path="/login">
+          <Route exact path="/">
             <Login />
           </Route> */}
-          <Route path="/todolist">
+          
+          <Route exact path="/dashboard">
+            <Dashboard />
+          </Route>
+          <Route exact path="/todolist">
             <TodoList />
           </Route>
         </Switch>
