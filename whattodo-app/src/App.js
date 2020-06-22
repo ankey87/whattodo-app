@@ -22,8 +22,8 @@ class App extends Component {
   render() {
     return (
       <>
-        <Header avatar={this.state.user.avatar} name={this.state.user.name} />
-        <SideMenu handleAddNewEvent={this.handleAddNewEvent} newEvent={this.state.newEvent} onChange={this.handleOnAddNewEvent} />
+      <Header avatar={this.state.user.avatar} name={this.state.user.name} />
+      <SideMenu handleAddNewEvent={this.handleAddNewEvent} newEvent={this.state.newEvent} onChange={this.handleOnAddNewEvent} />
         <Switch>
           {/* <Route exact path="/register">
             <Register />
@@ -31,14 +31,14 @@ class App extends Component {
           <Route exact path="/">
             <Login />
           </Route> */}
-          
-          <Route exact path="/dashboard">
-            <Dashboard />
-          </Route>
-          <Route exact path="/todolist">
+          <Route path="/todolist">
             <TodoList />
           </Route>
+          <Route path="/">
+            <Dashboard />
+          </Route>
         </Switch>
+
       </>
     );
   };

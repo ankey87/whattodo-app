@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import '../App.css';
 import Todo from "./Todo.js";
 import shortid from 'shortid';
+import TodoDetail from "./TodoDetail.js";
+import { withRouter, Switch, Route } from 'react-router-dom'
 
 const newTaskBtn = {
 
@@ -25,16 +27,22 @@ class TodoList extends Component {
       {
         id: 1,
         title: "Complete Assessment",
+        description: "Todo App",
+        urgency: "",
         completed: false
       },
       {
         id: 2,
         title: "Clean Kitchen",
+        description: "",
+        urgency: "",
         completed: false
       },
       {
         id: 3,
         title: "Complete CBLs",
+        description: "",
+        urgency: "",
         completed: false
       },
     ],
@@ -57,6 +65,8 @@ class TodoList extends Component {
     let newEventObj = {
       title: this.state.newEvent,
       completed: false,
+      description: "",
+      urgency: "",
       id: shortid.generate(),
     }
     this.setState({
@@ -90,22 +100,43 @@ class TodoList extends Component {
       });
     })
   }
-
+  handleEditTodo = (id) => {
+    this.setState((state) => {
+      let editedTask = state.tasks.map((task) => {
+        if (task.id === id)
+          return { ...task, title: task.title, description: task.description, completed: state.onChangeCheckbox  }
+        else {
+          return task;
+        }
+      });
+      return ({
+        tasks: editedTask
+      });
+    })
+  }
 
   render() {
     return (
       <>
-        <div style={newTaskBtn}>
-          <input type="text"
-            value={this.newEvent}
-            onChange={this.onChangeNewTask}></input>
-          <button style={addTsk} onClick={this.handleAddNewEvent}>Add Task</button>
-        </div>
-        {this.state.tasks.map((task, index) => (
-          <Todo handleRemoveTask={this.handleRemoveTask} onChangeCheckbox={this.onChangeCheckbox} task={task} key={index} />
-      ))}
+        <Switch>
+          <Route exact path="/todolist/:todoId">
+            <TodoDetail editedTask={this.handleEditTodo} todoList={this.state.tasks} />
+          </Route>
+          <Route path="/todoList">
+            <div style={newTaskBtn}>
+              <input type="text"
+                value={this.newEvent}
+                onChange={this.onChangeNewTask}></input>
+              <button style={addTsk} onClick={this.handleAddNewEvent}>Add Task</button>
+            </div>
+            {this.state.tasks.map((task, index) => (
+              <Todo handleRemoveTask={this.handleRemoveTask} onChangeCheckbox={this.onChangeCheckbox} task={task} key={index} />
+            ))}
+          </Route>
+
+        </Switch>
       </>
     );
   };
 }
-export default TodoList;
+export default withRouter(TodoList);
